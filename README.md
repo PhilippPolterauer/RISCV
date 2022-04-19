@@ -29,5 +29,15 @@ make O=/workspaces/RISCV/build/busybox/ install
 ```
 cd /workspaces/RISCV
 mkdir initramfs
+cd initramfs
+mkdir -pv {bin,sbin,etc,proc,sys,usr/{bin,sbin}}
+printf "#\!/bin/sh\n
+mount -t proc none /proc\n
+mount -t sysfs none /sys\n
+echo -e \"\\\nBoot took \$(cut -d' ' -f1 /proc/uptime) seconds\\\n\"\n
+exec /bin/sh" >> init
+
+chmod +x init
+find . -print0 | cpio --null -ov --format=newc | gzip -9 > /workspaces/RISCV/build/initramfs-busybox.cpio.gz
 
 ```
