@@ -10,7 +10,7 @@ mkdir -pv $BUILD_FOLDER/initramfs/{bin,sbin,etc,proc,sys,usr/{bin,sbin}}
 cp -av $BUILD_FOLDER/busybox/_install/* $BUILD_FOLDER/initramfs/
 
 # setup basic init executable
-printf "#\!/bin/sh\n# exec /bin/sh" >> $BUILD_FOLDER/initramfs/init
+printf "#\!/bin/sh\nexec /bin/sh" >> $BUILD_FOLDER/initramfs/init
 
 # make file executable
 chmod +x $BUILD_FOLDER/initramfs/init 
