@@ -37,7 +37,20 @@ docker run riscv
 ```
 4) start qemu with the kernel and initramfs
 ```bash
-qemu-system-riscv64 -kernel .\build\linux\arch\riscv\boot\Image -initrd .\build\initramfs.cpio.gz -nographic -append "console=ttyS0"
+# on windows
+#    inside terminal
+wsl # start wsl2
+cp ~/RISCV/build/linux/arch/riscv/boot/Image .
+cp ~/RISCV/build/initramfs.cpio.gz .
+# CTRL+D to close wsl2
+
+# run qemu on pwershell or cmd
+qemu-system-riscv64 -machine virt -kernel Image -initrd initramfs.cpio.gz -nographic -append "console=ttyS0"
+```
+```bash
+# or on linux
+cd ~/RISCV
+qemu-system-riscv64 -kernel ./build/linux/arch/riscv/boot/Image -initrd ./build/initramfs.cpio.gz -nographic -append "console=ttyS0"
 ```
 
 # Detailed Instructions

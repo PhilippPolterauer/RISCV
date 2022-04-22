@@ -14,7 +14,6 @@
 	
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": ["ms-vscode.cpptools-extension-pack"],
-	"mounts": ["source=build,target=/workspaces/RISCV/build,type=volume"],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 

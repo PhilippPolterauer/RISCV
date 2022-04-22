@@ -1,3 +1,4 @@
 #!/bin/bash
 
-rm -rf {build, source}
+rm -rf $BUILD_FOLDER
+rm -rf $SRC_FOLDER
