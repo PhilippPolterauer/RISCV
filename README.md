@@ -7,7 +7,21 @@ References:
 
 ## TLDR
 
-1) start the docker 
+0) On Windows start wsl2 and navigate to a wsl2 folder (for performance reasons)
+
+1) clone the repository and open VSCODE from within wsl2 
+```bash
+# from a normal terminal start wsl
+wsl
+# change to a local folder (!important for performance)
+cd
+# clone repository
+git clone https://github.com/PhilippPolterauer/RISCV.git
+# OPEN it in vscode
+cd RISCV && code .
+```
+
+2) start the docker 
     - either through VSCode (open inside devcontainer)
     - or manually
         ```bash
@@ -16,12 +30,12 @@ References:
         # run image
         docker run riscv
         ```
-2) run the main script
+3) run the main script
     ```bash
     # Run all
     ./scripts/run_all.sh
     ```
-3) start qemu with the kernel and initramfs
+4) start qemu with the kernel and initramfs
 ```bash
 qemu-system-riscv64 -kernel .\build\linux\arch\riscv\boot\Image -initrd .\build\initramfs.cpio.gz -nographic -append "console=ttyS0"
 ```
