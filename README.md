@@ -35,9 +35,9 @@ docker run riscv
 # Run all
 ./scripts/run_all.sh
 ```
-4) start qemu with the kernel and initramfs
+4) copy files to host and start qemu with the kernel and initramfs
 ```bash
-# on windows
+# on windows (the following commandos copy everything to the home folder)
 #    inside terminal
 wsl # start wsl2
 cp ~/RISCV/build/linux/arch/riscv/boot/Image .
