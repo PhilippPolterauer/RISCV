@@ -1,4 +1,5 @@
 # build hello world for sifive_u
+simple hello world riscv qemu example
 
 ```bash
 make

@@ -10,10 +10,6 @@ RUN apt-get install -y git wget libncurses5-dev qemu-system-riscv64 vim cpio pyt
 RUN wget https://toolchains.bootlin.com/downloads/releases/toolchains/riscv64-lp64d/tarballs/riscv64-lp64d--glibc--stable-2021.11-1.tar.bz2
 RUN mkdir /opt/bootlin
 RUN tar jxf riscv64-lp64d--glibc--stable-2021.11-1.tar.bz2 -C /opt/bootlin
-RUN mkdir /opt/kernel
-WORKDIR /opt/kernel
-RUN git clone -b v5.11 --single-branch --depth 1 https://github.com/torvalds/linux
-RUN git clone https://git.busybox.net/busybox
 
 ENV CROSS_COMPILE=/opt/bootlin/riscv64-lp64d--glibc--stable-2021.11-1/bin/riscv64-buildroot-linux-gnu-
 ENV ARCH=riscv
