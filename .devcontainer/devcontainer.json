@@ -13,8 +13,9 @@
 	"settings": {},
 	
 	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": ["ms-vscode.cpptools-extension-pack"]
-
+	"extensions": ["ms-vscode.cpptools-extension-pack"],
+	"workspaceMount": "source=riscv_workspace,target=/workspaces,type=volume",
+	"workspaceFolder": "/workspaces",
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 

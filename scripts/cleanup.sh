@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rm -rq {build, source}
+rm -rf {build, source}
