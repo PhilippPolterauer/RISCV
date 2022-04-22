@@ -41,4 +41,5 @@ echo "generate initramfs"
 echo "------------------------"
 
 # generate initramfs
+./scripts/write_init.sh
 ./scripts/generate_initramfs.sh
