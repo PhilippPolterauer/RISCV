@@ -14,5 +14,6 @@ RUN tar jxf riscv64-lp64d--glibc--stable-2021.11-1.tar.bz2 -C /opt/bootlin
 ENV CROSS_COMPILE=/opt/bootlin/riscv64-lp64d--glibc--stable-2021.11-1/bin/riscv64-buildroot-linux-gnu-
 ENV ARCH=riscv
 
+ENTRYPOINT /bin/bash
 
 

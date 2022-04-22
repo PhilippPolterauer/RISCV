@@ -5,6 +5,28 @@ References:
 - [riscv-docs](https://risc-v-getting-started-guide.readthedocs.io/en/latest/index.html)
 
 
+## TLDR
+
+1) start the docker 
+    - either through VSCode (open inside devcontainer)
+    - or manually
+        ```bash
+        # build container with tag riscv
+        docker build .devcontainer/Dockerfile -t riscv
+        # run image
+        docker run riscv
+        ```
+2) run the main script
+    ```bash
+    # Run all
+    ./scripts/run_all.sh
+    ```
+3) start qemu with the kernel and initramfs
+```bash
+qemu-system-riscv64 -kernel .\build\linux\arch\riscv\boot\Image -initrd .\build\initramfs.cpio.gz -nographic -append "console=ttyS0"
+```
+
+# Detailed Instructions
 ## Prequisites
 - Install qemu from [here](https://www.qemu.org/download/)
 - I suggest useing vscode and start the devcontainer
