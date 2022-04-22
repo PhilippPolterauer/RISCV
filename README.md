@@ -24,17 +24,17 @@ cd RISCV && code .
 2) start the docker 
     - either through VSCode (open inside devcontainer)
     - or manually
-        ```bash
-        # build container with tag riscv
-        docker build .devcontainer/Dockerfile -t riscv
-        # run image
-        docker run riscv
-        ```
+```bash
+# build container with tag riscv
+docker build .devcontainer/Dockerfile -t riscv
+# run image
+docker run riscv
+```
 3) run the main script
-    ```bash
-    # Run all
-    ./scripts/run_all.sh
-    ```
+```bash
+# Run all
+./scripts/run_all.sh
+```
 4) start qemu with the kernel and initramfs
 ```bash
 qemu-system-riscv64 -kernel .\build\linux\arch\riscv\boot\Image -initrd .\build\initramfs.cpio.gz -nographic -append "console=ttyS0"
