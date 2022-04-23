@@ -5,14 +5,18 @@ The result is tested using qemu RISCV emulation.
 The project was done to learn more about building a custom minimal linux and using qemu to emulate different architectures.
 Important topics:
 - cross compiling from x86 (windows) to RISCV
-- machine emulation using qemu
+- machine (ISA) emulation using qemu
 - linux kernel compilation
 
 References:
-- [RISCV](https://riscv.org/])
-- [RISCV wikipedia](https://en.wikipedia.org/wiki/RISC-V)
-- [riscv-docs](https://risc-v-getting-started-guide.readthedocs.io/en/latest/index.html)
-- [QEMU](https://www.qemu.org/)
+- RISCV
+    - [homepage](https://riscv.org/])
+    - [wikipedia](https://en.wikipedia.org/wiki/RISC-V)
+    - [docs](https://risc-v-getting-started-guide.readthedocs.io/en/latest/index.html)
+- QEMU
+    - [homepage](https://www.qemu.org/)
+- busybox
+    - [homepage](https://busybox.net/)
 
 
 ## TLDR
