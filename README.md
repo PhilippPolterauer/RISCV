@@ -42,7 +42,7 @@ cd RISCV && code .
     - or manually
 ```bash
 # build container with tag riscv
-docker build .devcontainer -t riscv
+ docker build .devcontainer/ -t riscv --build-arg HOST_UID=$(id -u $USER) --build-arg HOST_GID=$(id -g $USER)
 # run image
 docker run -it -v $PWD:/workspaces/RISCV riscv
 ```
