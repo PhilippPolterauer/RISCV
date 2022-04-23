@@ -2,6 +2,9 @@
 
 set -e # STOP ON ERROR
 
+# define variables for scripts
+source scripts/init_vars.sh
+
 echo "------------------------"
 echo "Clean up"
 echo "------------------------"
@@ -14,7 +17,7 @@ echo "initializing folders"
 echo "------------------------"
 
 # prepare folders
-source scripts/init_folders.sh
+./scripts/init_folders.sh
 
 echo "------------------------"
 echo "downloading sources"

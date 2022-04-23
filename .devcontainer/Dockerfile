@@ -22,8 +22,9 @@ RUN tar jxf riscv64-lp64d--glibc--stable-2021.11-1.tar.bz2 -C /opt/bootlin
 ENV CROSS_COMPILE=/opt/bootlin/riscv64-lp64d--glibc--stable-2021.11-1/bin/riscv64-buildroot-linux-gnu-
 ENV ARCH=riscv
 
+RUN useradd -u $HOST_UID -o -m user
+RUN groupmod -g $HOST_GID user
+
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT /entrypoint.sh
-
-

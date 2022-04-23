@@ -56,8 +56,7 @@ docker run -it -v $PWD:/workspaces/RISCV riscv
 # on windows (the following commandos copy everything to the home folder)
 #    inside terminal
 wsl # start wsl2
-cp ~/RISCV/build/linux/arch/riscv/boot/Image .
-cp ~/RISCV/build/initramfs.cpio.gz .
+cp ~/RISCV/build/{linux/arch/riscv/boot/Image,initramfs.cpio.gz} .
 # CTRL+D to close wsl2
 
 # run qemu on pwershell or cmd
