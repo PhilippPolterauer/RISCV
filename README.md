@@ -93,7 +93,7 @@ mkdir -p $BUILD_FOLDER/{busybox,linux,intitramfs}
 
 ## Building Linux with default configuration
 ```bash
-cd /opt/kernel/linux/
+cd $SRC_FOLDER/linux/
 mkdir -p $BUILD_FOLDER/linux
 # configure make all default
 make O=$BUILD_FOLDER/linux/ defconfig
@@ -121,7 +121,7 @@ or with the following command
 sed -i 's/# CONFIG_STATIC is not set/CONFIG_STATIC=y/g' $BUILD_FOLDER/busybox/.config
 ```
 ```bash
-# enable static binary building
+# build busybox with 8 cores
 make O=$BUILD_FOLDER/busybox/ -j8
 # this copies everything to _install folder 
 make O=$BUILD_FOLDER/busybox/ install
@@ -139,7 +139,7 @@ mkdir -pv {bin,sbin,etc,proc,sys,usr/{bin,sbin}}
 # copy all of busybox installation files
 cp -av $BUILD_FOLDER/busybox/_install/* .
 # setup basic init executable
-printf "#\!/bin/sh\n# exec /bin/sh" >> init
+printf "#!/bin/sh\nexec /bin/sh" >> init
 chmod +x init # make sure the init file is executable
 # generate intramfs file
 find . -print0 | cpio --null -ov --format=newc | gzip -9 > $BUILD_FOLDER/initramfs.cpio.gz
