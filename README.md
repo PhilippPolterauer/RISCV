@@ -1,4 +1,4 @@
-# Simple RISCV Busybox example
+# Linux + Busybox on RISCV with QEMU on WIN10
 This repository contains a Docker Container and a readme showing how to build the linux kernel and busybox for the RISCV architecture.
 The result is tested using qemu RISCV emulation.
 
