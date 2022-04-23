@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cd $SRC_FOLDER
 
 # if git is available

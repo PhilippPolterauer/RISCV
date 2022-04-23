@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -e # STOP ON ERROR
 
 echo "------------------------"

@@ -18,6 +18,8 @@ References:
 - busybox
     - [homepage](https://busybox.net/)
 
+Everything was tested on Windows 10 with WSL2 Ubuntu on a AMD Ryzen 3600.
+
 
 ## TLDR
 
@@ -40,13 +42,13 @@ cd RISCV && code .
     - or manually
 ```bash
 # build container with tag riscv
-docker build .devcontainer/Dockerfile -t riscv
+docker build .devcontainer -t riscv
 # run image
-docker run riscv
+docker run -it -v $PWD:/workspaces/RISCV riscv
 ```
 3) run the main script
 ```bash
-# Run all
+# cd into main folder of RISCV
 ./scripts/run_all.sh
 ```
 4) copy files to host and start qemu with the kernel and initramfs
